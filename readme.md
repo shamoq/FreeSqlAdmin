@@ -37,18 +37,18 @@
    10. 使用winSW 搭建一个建议启动项目为服务的模块
    11. 还有最重要的鉴权模块，使用jwt处理鉴权标识的问题，后端实现一套功能点的体系，可以为任何一个你想进行权限控制的api进行权限控制，并可任意搭配分配给你的角色或者人员
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/1.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/1.png)
 
 # 🕐话不多说，上图吧
 
 ## 添加基础库 Simple.Core 添加基础库 Simple.Core
 
 基础库主要包含一些帮助类，用于方便开发的，和其他框架大同小异
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/2.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/2.png)
 
 ## Web项目扩展库 Simple.Core.Web
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/3.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/3.png)
 
 主要实现： 
 💛 应用模块基类 SimpleModule，继承此模块基类可分模块开发，分模块按需注册、配置管道，配置模块初始化
@@ -64,48 +64,48 @@
 
 基于 FluentScheduler 封装的自动注册任务，实现任务自动注册，配置基类用于可使每个任务能单独配置执行调度器
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/6.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/6.png)
 
 ## 🎃 **以上就是整个框架的封装，够简单吧，是不是感觉啥都没有用，就这么点东西已经完成了我上面构想的支撑！**
 
 下面大家看下admin模块和common模块，分别都能实现自动注入、定时任务、自动生成各自的数据库及数据初始化、领域事件处理，顺带说下，不管是控制台应用的主机还是webapi的主机，里面的模块都可使用构造函数注入哦
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/7.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/7.png)
 
 看admin控制器项目及主机启动，后面加业务控制器啥的，直接新建项目就行，控制台主机也自动支持了自动注入啥的，开发服务啊啥的都可以重复使用上面Applications下的任意实现
 
 WebHost 主机项目
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/8.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/8.png)
 
 启动 WebHost 主机
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/9.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/9.png)
 
 看控制台项目
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/10.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/10.png)
 
 启动控制台主机
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/11.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/11.png)
 
 
 ## 适配了一套基于vue3 navieui 前端页面
 悄悄说下，还适配了一套基于vue3 navieui,已完成登录，菜单、角色、角色授权、用于管理哦
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/14.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/14.png)
 
 
 ## 注意配置文件的开发和发布隔离
 对了，注意配置文件的开发和发布隔离哦
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/12.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/12.png)
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/13.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/13.png)
 
 ## 新增AOT项目 快速部署服务
 新增Simple.RunService项目，快速部署服务，很好使用，AOT编译，不用安装环境 X64可用。
 
-![image](https://github.com/shamoq/vue-vben-admin/raw/main/cutImgs/15.png)
+![image](https://github.com/shamoq/FreeSqlAdmin/blob/main/src/cutImgs/15.png)
 
 好了，用最简单的东西实现了大多数项目业务都能搞定的框架了吧，如果对你有用，记得 [点我✨Star](https://gitee.com/VCodeWork/simple-framework) 哦，初步版本已提交，有时间会持续优化，代码生成器还有一丢丢没搞玩，其他都差不多了，需要的看代码去吧。
 
