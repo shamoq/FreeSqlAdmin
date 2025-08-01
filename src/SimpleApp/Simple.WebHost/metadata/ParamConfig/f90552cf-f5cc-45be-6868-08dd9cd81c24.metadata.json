@@ -1,0 +1,48 @@
+﻿[
+  {
+    "Name": "Wps配置信息",
+    "Description": "配置信息联系管理员获取",
+    "Items": [
+      {
+        "ParamCode": "wps_enable",
+        "ParamName": "是否启用",
+        "ParamType": 7,
+        "ParamTypeText": "Option",
+        "Options": [
+          {
+            "Value": 1,
+            "Label": "是"
+          },
+          {
+            "Value": 0,
+            "Label": "否"
+          }
+        ]
+      },
+      {
+        "ParamCode": "wps_user",
+        "ParamName": "Wps用户标识",
+        "ParamType": 1,
+        "ParamTypeText": "String"
+      },
+      {
+        "ParamCode": "wps_appId",
+        "ParamName": "AppId",
+        "ParamType": 1,
+        "ParamTypeText": "String"
+      },
+      {
+        "ParamCode": "wps_appKey",
+        "ParamName": "AppKey",
+        "ParamType": 1,
+        "ParamTypeText": "String"
+      },
+      {
+        "ParamCode": "wps_callbackUrl",
+        "ParamName": "回调地址",
+        "ParamType": 1,
+        "ParamTypeText": "String"
+      }
+    ]
+  }
+]

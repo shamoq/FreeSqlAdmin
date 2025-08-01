@@ -1,0 +1,131 @@
+﻿{
+  "name": "打印管理",
+  "code": "superPrint",
+  "order": 2,
+  "children": [
+    {
+      "code": "printSetting",
+      "name": "套打设置",
+      "children": [
+        {
+          "code": "printDatasource",
+          "name": "数据源管理",
+          "actions": [
+            {
+              "code": "printDatasource:query",
+              "name": "查询"
+            },
+            {
+              "code": "printDatasource:add",
+              "name": "新增"
+            },
+            {
+              "code": "printDatasource:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "printDatasource:del",
+              "name": "删除"
+            }
+          ]
+        },
+        {
+          "code": "printScene",
+          "name": "场景管理",
+          "actions": [
+            {
+              "code": "printScene:query",
+              "name": "查询"
+            },
+            {
+              "code": "printScene:add",
+              "name": "新增"
+            },
+            {
+              "code": "printScene:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "printScene:del",
+              "name": "删除"
+            }
+          ]
+        },
+        {
+          "code": "printDataSet",
+          "name": "数据集管理",
+          "actions": [
+            {
+              "code": "printDataSet:query",
+              "name": "查询"
+            },
+            {
+              "code": "printDataSet:add",
+              "name": "新增"
+            },
+            {
+              "code": "printDataSet:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "printDataSet:del",
+              "name": "删除"
+            }
+          ]
+        },
+        {
+          "code": "printTemplate",
+          "name": "模板管理",
+          "actions": [
+            {
+              "code": "printTemplate:query",
+              "name": "查询"
+            },
+            {
+              "code": "printTemplate:add",
+              "name": "新增"
+            },
+            {
+              "code": "printTemplate:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "printTemplate:del",
+              "name": "删除"
+            },
+            {
+              "code": "printTemplate:preview",
+              "name": "预览"
+            },
+            {
+              "code": "printTemplate:download",
+              "name": "下载"
+            }
+          ]
+        },
+        {
+          "code": "printAccount",
+          "name": "套打查询",
+          "actions": [
+            {
+              "code": "printAccount:query",
+              "name": "查询"
+            },
+            {
+              "code": "printAccount:add",
+              "name": "新增"
+            },
+            {
+              "code": "printAccount:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "printAccount:del",
+              "name": "删除"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

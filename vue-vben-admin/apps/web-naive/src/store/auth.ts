@@ -33,7 +33,7 @@ export const useAuthStore = defineStore('auth', () => {
     let userInfo: null | UserInfo = null;
     try {
       loginLoading.value = true;
-      const { accessToken } = await loginApi(params);
+      const { accessToken, message } = await loginApi(params);
 
       // 如果成功获取到 accessToken
       if (accessToken) {
@@ -41,7 +41,7 @@ export const useAuthStore = defineStore('auth', () => {
         accessStore.setAccessToken(accessToken);
 
         // 获取用户信息并存储到 accessStore 中
-        const [fetchUserInfoResult, accessCodes] = await Promise.all([
+        const [fetchUserInfoResult, [actionCodes]] = await Promise.all([
           fetchUserInfo(),
           getAccessCodesApi(),
         ]);
@@ -49,19 +49,23 @@ export const useAuthStore = defineStore('auth', () => {
         userInfo = fetchUserInfoResult;
 
         userStore.setUserInfo(userInfo);
-        accessStore.setAccessCodes(accessCodes);
+        accessStore.setAccessCodes([]);//
 
         if (accessStore.loginExpired) {
           accessStore.setLoginExpired(false);
         } else {
           onSuccess
-            ? await onSuccess?.()
-            : await router.push(
-                userInfo.homePath || preferences.app.defaultHomePath,
-              );
+          ? await onSuccess?.()
+          : await router.push('/');
         }
 
-        if (userInfo?.realName) {
+        if (message) {
+          notification.warning({
+            content: message,
+            duration: 3000,
+          });
+        }
+        else if (userInfo?.realName) {
           notification.success({
             content: $t('authentication.loginSuccess'),
             description: `${$t('authentication.loginSuccessDesc')}:${userInfo?.realName}`,
@@ -92,8 +96,8 @@ export const useAuthStore = defineStore('auth', () => {
       path: LOGIN_PATH,
       query: redirect
         ? {
-            redirect: encodeURIComponent(router.currentRoute.value.fullPath),
-          }
+          redirect: encodeURIComponent(router.currentRoute.value.fullPath),
+        }
         : {},
     });
   }
@@ -101,8 +105,18 @@ export const useAuthStore = defineStore('auth', () => {
   async function fetchUserInfo() {
     let userInfo: null | UserInfo = null;
     userInfo = await getUserInfoApi();
+    userInfo.realName = userInfo.userName;
     userStore.setUserInfo(userInfo);
     return userInfo;
+  }
+
+  async function fetchAccessCodes() {
+    const accessCodes: String[] = await getAccessCodesApi();
+
+    const menuCode = accessCodes.filter(t => t.indexOf(":query") > -1)
+      .map(t=>t.split(':')[0]);
+
+    return [accessCodes, menuCode];
   }
 
   function $reset() {
@@ -113,6 +127,7 @@ export const useAuthStore = defineStore('auth', () => {
     $reset,
     authLogin,
     fetchUserInfo,
+    fetchAccessCodes,
     loginLoading,
     logout,
   };

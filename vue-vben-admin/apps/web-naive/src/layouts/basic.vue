@@ -6,16 +6,12 @@ import { computed, ref, watch } from 'vue';
 import { AuthenticationLoginExpiredModal } from '@vben/common-ui';
 import { VBEN_DOC_URL, VBEN_GITHUB_URL } from '@vben/constants';
 import { useWatermark } from '@vben/hooks';
-import { BookOpenText, CircleHelp, MdiGithub } from '@vben/icons';
-import {
-  BasicLayout,
-  LockScreen,
-  Notification,
-  UserDropdown,
-} from '@vben/layouts';
+import { BookOpenText, CircleHelp, MdiGithub, Password } from '@vben/icons';
+import {  BasicLayout, LockScreen,  Notification, UserDropdown, } from '@vben/layouts';
 import { preferences } from '@vben/preferences';
 import { useAccessStore, useUserStore } from '@vben/stores';
 import { openWindow } from '@vben/utils';
+import { useRouter } from 'vue-router';
 
 import { $t } from '#/locales';
 import { useAuthStore } from '#/store';
@@ -55,6 +51,7 @@ const notifications = ref<NotificationItem[]>([
 const userStore = useUserStore();
 const authStore = useAuthStore();
 const accessStore = useAccessStore();
+const router = useRouter();
 const { destroyWatermark, updateWatermark } = useWatermark();
 const showDot = computed(() =>
   notifications.value.some((item) => !item.isRead),
@@ -87,6 +84,13 @@ const menus = computed(() => [
     },
     icon: CircleHelp,
     text: $t('ui.widgets.qa'),
+  },
+  {
+    handler: () => {
+      router.push('/user/resetpassword');
+    },
+    icon: Password,
+    text: '修改密码',
   },
 ]);
 
@@ -130,8 +134,8 @@ watch(
         :avatar
         :menus
         :text="userStore.userInfo?.realName"
-        description="ann.vben@gmail.com"
-        tag-text="Pro"
+        :description="userStore.userInfo?.tenantName+ (userStore.userInfo?.tenantDay?'，有效期剩余'+userStore.userInfo?.tenantDay+'天':'')"
+        :tag-text="userStore.userInfo?.tenantType"
         @logout="handleLogout"
       />
     </template>
@@ -139,6 +143,7 @@ watch(
       <Notification
         :dot="showDot"
         :notifications="notifications"
+        :clearable="true"
         @clear="handleNoticeClear"
         @make-all="handleMakeAll"
       />

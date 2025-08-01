@@ -56,7 +56,8 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
   }
 
   function formatToken(token: null | string) {
-    return token ? `Bearer ${token}` : null;
+    // return token ? `Bearer ${token}` : null;
+    return token;
   }
 
   // 请求头处理
@@ -66,6 +67,11 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
 
       config.headers.Authorization = formatToken(accessStore.accessToken);
       config.headers['Accept-Language'] = preferences.app.locale;
+      // config.headers['Content-Type'] = 'application/json';
+      // Add screen resolution header
+      if (typeof window !== 'undefined' && window.screen) {
+        config.headers['X-Screen-Resolution'] = `${window.screen.width}x${window.screen.height}`;
+      }
       return config;
     },
   });
@@ -106,6 +112,7 @@ function createRequestClient(baseURL: string, options?: RequestClientOptions) {
 }
 
 export const requestClient = createRequestClient(apiURL, {
+  timeout: 60000,
   responseReturn: 'data',
 });
 

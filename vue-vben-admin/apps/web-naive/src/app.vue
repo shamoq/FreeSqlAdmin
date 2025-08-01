@@ -15,6 +15,7 @@ import {
   NConfigProvider,
   NMessageProvider,
   NNotificationProvider,
+  NDialogProvider,
   zhCN,
 } from 'naive-ui';
 
@@ -49,7 +50,9 @@ const themeOverrides = computed((): GlobalThemeOverrides => {
   >
     <NNotificationProvider>
       <NMessageProvider>
-        <RouterView />
+        <NDialogProvider>
+          <RouterView />
+        </NDialogProvider>
       </NMessageProvider>
     </NNotificationProvider>
   </NConfigProvider>

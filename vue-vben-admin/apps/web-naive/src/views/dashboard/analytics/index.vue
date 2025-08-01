@@ -23,29 +23,29 @@ import AnalyticsVisits from './analytics-visits.vue';
 const overviewItems: AnalysisOverviewItem[] = [
   {
     icon: SvgCardIcon,
-    title: '用户量',
-    totalTitle: '总用户量',
+    title: '待审批',
+    totalTitle: '总合同',
     totalValue: 120_000,
     value: 2000,
   },
   {
     icon: SvgCakeIcon,
-    title: '访问量',
-    totalTitle: '总访问量',
+    title: '本方',
+    totalTitle: '对方',
     totalValue: 500_000,
     value: 20_000,
   },
   {
     icon: SvgDownloadIcon,
-    title: '下载量',
-    totalTitle: '总下载量',
+    title: '待签署',
+    totalTitle: '已签署',
     totalValue: 120_000,
     value: 8000,
   },
   {
     icon: SvgBellIcon,
-    title: '使用量',
-    totalTitle: '总使用量',
+    title: '本周新增',
+    totalTitle: '本月新增',
     totalValue: 50_000,
     value: 5000,
   },
@@ -53,11 +53,11 @@ const overviewItems: AnalysisOverviewItem[] = [
 
 const chartTabs: TabOption[] = [
   {
-    label: '流量趋势',
+    label: '合同趋势',
     value: 'trends',
   },
   {
-    label: '月访问量',
+    label: '每月合同数量',
     value: 'visits',
   },
 ];
@@ -79,10 +79,10 @@ const chartTabs: TabOption[] = [
       <AnalysisChartCard class="mt-5 md:mr-4 md:mt-0 md:w-1/3" title="访问数量">
         <AnalyticsVisitsData />
       </AnalysisChartCard>
-      <AnalysisChartCard class="mt-5 md:mr-4 md:mt-0 md:w-1/3" title="访问来源">
+      <AnalysisChartCard class="mt-5 md:mr-4 md:mt-0 md:w-1/3" title="合同模板统计">
         <AnalyticsVisitsSource />
       </AnalysisChartCard>
-      <AnalysisChartCard class="mt-5 md:mt-0 md:w-1/3" title="访问来源">
+      <AnalysisChartCard class="mt-5 md:mt-0 md:w-1/3" title="合同分类统计">
         <AnalyticsVisitsSales />
       </AnalysisChartCard>
     </div>

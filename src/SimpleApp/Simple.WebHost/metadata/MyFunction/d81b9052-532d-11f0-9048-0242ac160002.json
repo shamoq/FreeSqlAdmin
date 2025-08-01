@@ -1,0 +1,109 @@
+﻿{
+  "name": "系统管理",
+  "code": "system",
+  "order": 99,
+  "children": [
+    {
+      "code": "usercenter",
+      "name": "组织架构",
+      "children": [
+        {
+          "code": "role",
+          "name": "角色管理",
+          "actions": [
+            {
+              "code": "role:query",
+              "name": "查询"
+            },
+            {
+              "code": "role:add",
+              "name": "新增"
+            },
+            {
+              "code": "role:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "role:del",
+              "name": "删除"
+            },
+            {
+              "code": "role:grant",
+              "name": "授权"
+            }
+          ]
+        },
+        {
+          "code": "user",
+          "name": "用户管理",
+          "actions": [
+            {
+              "code": "user:query",
+              "name": "查询"
+            },
+            {
+              "code": "user:add",
+              "name": "新增用户"
+            },
+            {
+              "code": "user:edit",
+              "name": "编辑用户"
+            },
+            {
+              "code": "user:del",
+              "name": "删除用户"
+            },
+            {
+              "code": "org:add",
+              "name": "新增组织"
+            },
+            {
+              "code": "org:edit",
+              "name": "编辑组织"
+            },
+            {
+              "code": "org:del",
+              "name": "删除组织"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "log",
+      "name": "日志管理",
+      "children": [
+        {
+          "code": "loginlog",
+          "name": "日志管理",
+          "actions": [
+            {
+              "code": "loginlog:query",
+              "name": "查询"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "systemsetting",
+      "name": "系统设置",
+      "children": [
+        {
+          "code": "paramlist",
+          "name": "参数设置",
+          "actions": [
+            {
+              "code": "paramlist:query",
+              "name": "查询"
+            },
+            {
+              "code": "paramlist:save",
+              "name": "保存"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

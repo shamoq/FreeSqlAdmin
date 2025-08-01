@@ -83,7 +83,6 @@ const formSchema = computed((): VbenFormSchema[] => {
 
 function handleSubmit(value: Recordable<any>) {
   // eslint-disable-next-line no-console
-  console.log('register submit:', value);
 }
 </script>
 

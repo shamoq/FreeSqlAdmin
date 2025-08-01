@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+	<LangVersion>preview</LangVersion>
+  </PropertyGroup>
+	<PropertyGroup>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Simple框架基础库，主要包含一些帮助类，用于方便开发的</Title>
+		<Description>Simple框架基础库，主要包含一些帮助类，用于方便开发的</Description>
+		<PackageOutputPath>..\..\Package</PackageOutputPath>
+		<VersionPrefix>1.0.2</VersionPrefix>
+		<VersionSuffix></VersionSuffix>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Include="..\..\Package\logo.png" Link="logo.png">
+	    <PackagePath>\</PackagePath>
+	    <Pack>True</Pack>
+	  </None>
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FreeSql.Provider.Dameng" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.GBase" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.MySqlConnector" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.Odbc" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.Oracle" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.OracleOledb" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.ShenTong" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.5.210" />
+    <PackageReference Include="FreeSql.Provider.SqlServer" Version="3.5.210" />
+    <ProjectReference Include="..\Simple.AspNetCore\Simple.AspNetCore.csproj" />
+    <ProjectReference Include="..\Simple.Utils\Simple.Utils.csproj" />
+	  <PackageReference Include="FreeSql.Cloud" Version="2.0.1" />
+  </ItemGroup>
+
+</Project>

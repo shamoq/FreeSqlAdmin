@@ -1,4 +1,6 @@
 import { defineOverridesPreferences } from '@vben/preferences';
+import { useAppConfig } from '@vben/hooks';
+const { VITE_APP_ENABLE_PERFERENCE } = useAppConfig(import.meta.env, import.meta.env.PROD);
 
 /**
  * @description 项目配置文件
@@ -9,5 +11,31 @@ export const overridesPreferences = defineOverridesPreferences({
   // overrides
   app: {
     name: import.meta.env.VITE_APP_TITLE,
+    locale: 'zh-CN',
+    enablePreferences: VITE_APP_ENABLE_PERFERENCE,
+},
+  copyright: {
+    companyName: '',
+    companySiteLink: '',
+    date: '2025',
+    enable: true,
+    icp: '鄂ICP备18020324-1',
+    icpLink: '',
   },
+  theme: {
+    mode: "light"
+  },
+  widget: {
+    languageToggle: false,
+    globalSearch: false,
+    "notification": false,
+    "sidebarToggle": false
+  },
+  "shortcutKeys": {
+    "globalSearch": false
+  },
+  "tabbar": {
+    "enable": false,
+  },
+
 });

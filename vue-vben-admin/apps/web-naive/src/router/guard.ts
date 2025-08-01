@@ -51,12 +51,12 @@ function setupAccessGuard(router: Router) {
     const authStore = useAuthStore();
 
     // 基本路由，这些路由不需要进入权限拦截
-    if (coreRouteNames.includes(to.name as string)) {
+    if (to.name !== 'Root' && coreRouteNames.includes(to.name as string)) {
       if (to.path === LOGIN_PATH && accessStore.accessToken) {
         return decodeURIComponent(
           (to.query?.redirect as string) ||
-            userStore.userInfo?.homePath ||
-            preferences.app.defaultHomePath,
+          userStore.userInfo?.homePath ||
+          preferences.app.defaultHomePath,
         );
       }
       return true;
@@ -89,30 +89,61 @@ function setupAccessGuard(router: Router) {
     if (accessStore.isAccessChecked) {
       return true;
     }
+
     // 生成路由表
     // 当前登录用户拥有的角色标识列表
     const userInfo = userStore.userInfo || (await authStore.fetchUserInfo());
     const userRoles = userInfo.roles ?? [];
+    // const userRoles = userInfo.roles ?? [];
+    // 获取权限码
+    const [actionCodes, menuCodes] = await authStore.fetchAccessCodes();
+    // 保存权限码
+    accessStore.setAccessCodes(actionCodes);
 
     // 生成菜单和路由
     const { accessibleMenus, accessibleRoutes } = await generateAccess({
-      roles: userRoles,
+      roles: menuCodes,  // 使用菜单权限码替代角色权限码
       router,
       // 则会在菜单中显示，但是访问会被重定向到403
       routes: accessRoutes,
     });
 
+    // 如果菜单children为空，则移除菜单
+    const menus = accessibleMenus.filter((item) => item.children?.length);
+
     // 保存菜单信息和路由信息
-    accessStore.setAccessMenus(accessibleMenus);
+    accessStore.setAccessMenus(menus);
     accessStore.setAccessRoutes(accessibleRoutes);
     accessStore.setIsAccessChecked(true);
-    const redirectPath = (from.query.redirect ??
-      (to.path === preferences.app.defaultHomePath
-        ? userInfo.homePath || preferences.app.defaultHomePath
-        : to.fullPath)) as string;
+
+    // 计算目标路由
+    let redirectPath = from.query.redirect as string;
+    if (!redirectPath) { // 没有指定路径的情况下，根目录则获取默认路径
+      if (to.name === 'Root') {
+        const menus = accessStore.accessMenus;
+        const firstMenu = menus[0]?.children?.[0] || menus[0];
+        redirectPath = firstMenu?.path as string;
+      } else {
+        redirectPath = to.path;
+      }
+
+      // 无法计算出来时，直接403
+      if (!redirectPath) {
+        redirectPath = "/403";
+      }
+    } else {
+      redirectPath = decodeURIComponent(redirectPath);
+      if (redirectPath == '/') {
+        const menus = accessStore.accessMenus;
+        const firstMenu = menus[0]?.children?.[0] || menus[0];
+        redirectPath = firstMenu?.path as string;
+      }
+      // 读取完毕后删掉这个参数，避免死循环
+      // delete from.query.redirect;
+    }
 
     return {
-      ...router.resolve(decodeURIComponent(redirectPath)),
+      ...router.resolve(decodeURIComponent(redirectPath as string)),
       replace: true,
     };
   });

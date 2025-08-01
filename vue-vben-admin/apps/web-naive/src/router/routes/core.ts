@@ -35,7 +35,7 @@ const coreRoutes: RouteRecordRaw[] = [
     },
     name: 'Root',
     path: '/',
-    redirect: preferences.app.defaultHomePath,
+    // redirect: preferences.app.defaultHomePath,
     children: [],
   },
   {
@@ -92,6 +92,17 @@ const coreRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    component: () => import('#/views/_core/fallback/nomenu.vue'),
+    meta: {
+      hideInBreadcrumb: true,
+      hideInMenu: true,
+      hideInTab: true,
+      title: '403',
+    },
+    name: 'Fallback403',
+    path: '/403',
+  }
 ];
 
 export { coreRoutes, fallbackNotFoundRoute };
