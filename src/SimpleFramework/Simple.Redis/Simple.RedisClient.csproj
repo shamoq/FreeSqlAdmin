@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	 <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+	 <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+	<PropertyGroup>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Simple框架基础库，主要包含redis帮助类，用于方便开发的</Title>
+		<Description>Simple框架基础库，主要包含redis帮助类，用于方便开发的</Description>
+		<PackageOutputPath>..\..\Package</PackageOutputPath>
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<VersionSuffix></VersionSuffix>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\..\Package\logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="RedLock.net" Version="2.3.2" />
+    <PackageReference Include="Simple.Utils" Version="1.0.3" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.0" />
+  </ItemGroup>
+
+</Project>

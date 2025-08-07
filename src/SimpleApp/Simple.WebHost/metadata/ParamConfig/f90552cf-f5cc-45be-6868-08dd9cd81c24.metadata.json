@@ -1,0 +1,100 @@
+﻿[
+  {
+    "Name": "AI配置",
+    "Description": "配置模型信息",
+    "Items": [
+      {
+        "ParamCode": "aiEnable",
+        "ParamName": "是否启用",
+        "ParamType": 7,
+        "ParamTypeText": "Option",
+        "Options": [
+          {
+            "Value": 1,
+            "Label": "是"
+          },
+          {
+            "Value": 0,
+            "Label": "否"
+          }
+        ]
+      },
+      {
+        "ParamCode": "aiModel",
+        "ParamName": "大模型",
+        "ParamType": 7,
+        "ParamTypeText": "Option",
+        "Options": [
+          {
+            "Value": "GPT-4",
+            "Label": "GPT-4 (OpenAI)"
+          },
+          {
+            "Value": "GPT-3.5",
+            "Label": "GPT-3.5 Turbo (OpenAI)"
+          },
+          {
+            "Value": "Claude-3",
+            "Label": "Claude 3 (Anthropic)"
+          },
+          {
+            "Value": "Claude-2",
+            "Label": "Claude 2 (Anthropic)"
+          },
+          {
+            "Value": "Gemini-Pro",
+            "Label": "Gemini Pro (Google)"
+          },
+          {
+            "Value": "Gemini-Ultra",
+            "Label": "Gemini Ultra (Google)"
+          },
+          {
+            "Value": "Llama-3",
+            "Label": "Llama 3 (Meta)"
+          },
+          {
+            "Value": "Llama-2",
+            "Label": "Llama 2 (Meta)"
+          },
+          {
+            "Value": "Mistral-Large",
+            "Label": "Mistral Large (Mistral AI)"
+          },
+          {
+            "Value": "Qwen-7B",
+            "Label": "Qwen 7B (阿里巴巴)"
+          },
+          {
+            "Value": "Qwen-14B",
+            "Label": "Qwen 14B (阿里巴巴)"
+          },
+          {
+            "Value": "DeepSeek",
+            "Label": "DeepSeek (深度求索)"
+          },
+          {
+            "Value": "GLM-4",
+            "Label": "GLM-4 (智谱AI)"
+          },
+          {
+            "Value": "GLM-3",
+            "Label": "GLM-3 (智谱AI)"
+          }
+        ]
+      },
+      {
+        "ParamCode": "aiAddress",
+        "ParamName": "调用地址",
+        "ParamType": 1,
+        "ParamTypeText": "String"
+      },
+      {
+        "ParamCode": "aiSecret",
+        "ParamName": "调用密钥",
+        "ParamType": 1,
+        "ParamTypeText": "String"
+      }
+    ]
+  }
+]

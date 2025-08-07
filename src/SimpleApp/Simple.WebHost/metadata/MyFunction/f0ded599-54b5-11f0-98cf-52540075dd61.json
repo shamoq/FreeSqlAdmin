@@ -1,0 +1,83 @@
+{
+  "name": "租户后台",
+  "code": "tenant",
+  "order": 99,
+  "children": [
+    {
+      "code": "tenantmanager",
+      "name": "租户管理",
+      "children": [
+        {
+          "code": "tenantdatasource",
+          "name": "数据源",
+          "actions": [
+            {
+              "code": "tenantdatasource:query",
+              "name": "查询"
+            },
+            {
+              "code": "tenantdatasource:add",
+              "name": "新增"
+            },
+            {
+              "code": "tenantdatasource:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "tenantdatasource:del",
+              "name": "删除"
+            }
+          ]
+        },
+        {
+          "code": "tenantpackage",
+          "name": "租户套餐",
+          "actions": [
+            {
+              "code": "tenantpackage:query",
+              "name": "查询"
+            },
+            {
+              "code": "tenantpackage:add",
+              "name": "新增"
+            },
+            {
+              "code": "tenantpackage:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "tenantpackage:del",
+              "name": "删除"
+            },
+            {
+              "code": "tenantpackage:grant",
+              "name": "授权"
+            }
+          ]
+        },
+        {
+          "code": "tenantlist",
+          "name": "租户管理",
+          "actions": [
+            {
+              "code": "tenantlist:query",
+              "name": "查询"
+            },
+            {
+              "code": "tenantlist:add",
+              "name": "新增"
+            },
+            {
+              "code": "tenantlist:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "tenantlist:del",
+              "name": "删除"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

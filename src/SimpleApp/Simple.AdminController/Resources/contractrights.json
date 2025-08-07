@@ -1,0 +1,91 @@
+[
+  {"code": "workbench", "name":"工作台", "type":"nav"},
+
+  {"code": "mycontract", "parent":"workbench", "name":"我起草的", "type":"menu"},
+  {"code": "mycontract:query", "parent":"mycontract", "name":"查询", "type":"action"},
+  {"code": "mycontract:add", "parent":"mycontract", "name":"起草合同", "type":"action"},
+  {"code": "mycontract:adds", "parent":"mycontract", "name":"起草合同", "type":"action"},
+  {"code": "mycontract:edit", "parent":"mycontract", "name":"编辑", "type":"action"},
+  {"code": "mycontract:del", "parent":"mycontract", "name":"删除", "type":"action"},
+  {"code": "mycontract:create", "parent":"mycontract", "name":"生成合同", "type":"action"},
+  {"code": "mycontract:lanch", "parent":"mycontract", "name":"提交审批", "type":"action"},
+  {"code": "mycontract:approve", "parent":"mycontract", "name":"审批", "type":"action"},
+  {"code": "mycontract:onlinesign", "parent":"mycontract", "name":"线下签署", "type":"action"},
+  {"code": "mycontract:download", "parent":"mycontract", "name":"下载合同", "type":"action"},
+  {"code": "mycontract:export", "parent":"mycontract", "name":"导出", "type":"action"},
+  {"code": "mycontract:import", "parent":"mycontract", "name":"导入", "type":"action"},
+
+  {"code": "approvecontract", "parent":"workbench", "name":"我审批的", "type":"menu"},
+  {"code": "approvecontract:query", "parent":"approvecontract", "name":"查询", "type":"action"},
+
+  {"code": "allcontract", "parent":"workbench", "name":"合同台账", "type":"menu"},
+  {"code": "allcontract:query", "parent":"allcontract", "name":"查询", "type":"action"},
+  {"code": "allcontract:queryapprove", "parent":"allcontract", "name":"查询我审批的", "type":"action"},
+  {"code": "allcontract:querydept", "parent":"allcontract", "name":"查询部门下所有合同", "type":"action"},
+  {"code": "allcontract:queryall", "parent":"allcontract", "name":"查询所有合同", "type":"action"},
+
+  {"code": "basic", "name":"基础配置", "type":"nav"},
+
+  {"code": "contracttype", "parent":"basic", "name":"分类管理", "type":"menu"},
+  {"code": "contracttype:query", "parent":"contracttype", "name":"查询", "type":"action"},
+  {"code": "contracttype:add", "parent":"contracttype", "name":"新增", "type":"action"},
+  {"code": "contracttype:edit", "parent":"contracttype", "name":"编辑", "type":"action"},
+  {"code": "contracttype:del", "parent":"contracttype", "name":"删除", "type":"action"},
+
+  {"code": "template", "parent":"basic", "name":"合同模板", "type":"menu"},
+  {"code": "template:query", "parent":"template", "name":"查询", "type":"action"},
+  {"code": "template:add", "parent":"template", "name":"新增", "type":"action"},
+  {"code": "template:edit", "parent":"template", "name":"编辑", "type":"action"},
+  {"code": "template:del", "parent":"template", "name":"删除", "type":"action"},
+  {"code": "template:introduce", "parent":"template", "name":"引入标准模板", "type":"action"},
+  {"code": "template:release", "parent":"template", "name":"发布", "type":"action"},
+  {"code": "template:cancelrelease", "parent":"template", "name":"取消发布", "type":"action"},
+  {"code": "template:download", "parent":"template", "name":"下载模板", "type":"action"},
+  {"code": "template:fieldconfig", "parent":"template", "name":"字段配置", "type":"action"},
+
+  {"code": "provider", "parent":"basic", "name":"合同本方", "type":"menu"},
+  {"code": "provider:query", "parent":"provider", "name":"查询", "type":"action"},
+  {"code": "provider:add", "parent":"provider", "name":"新增", "type":"action"},
+  {"code": "provider:edit", "parent":"provider", "name":"编辑", "type":"action"},
+  {"code": "provider:del", "parent":"provider", "name":"删除", "type":"action"},
+
+  {"code": "signparty", "parent":"basic", "name":"合同相对方", "type":"menu"},
+  {"code": "signparty:query", "parent":"signparty", "name":"查询", "type":"action"},
+  {"code": "signparty:add", "parent":"signparty", "name":"新增", "type":"action"},
+  {"code": "signparty:edit", "parent":"signparty", "name":"编辑", "type":"action"},
+  {"code": "signparty:del", "parent":"signparty", "name":"删除", "type":"action"},
+
+  {"code": "advance", "name":"高级功能", "type":"nav"},
+
+  {"code": "custom", "parent":"advance", "name":"批量打印", "type":"menu"},
+  {"code": "custom:query", "parent":"custom", "name":"查询", "type":"action"},
+  {"code": "custom:add", "parent":"custom", "name":"新增", "type":"action"},
+  {"code": "custom:edit", "parent":"custom", "name":"编辑", "type":"action"},
+  {"code": "custom:del", "parent":"custom", "name":"删除", "type":"action"},
+  {"code": "custom:introduce", "parent":"custom", "name":"引入标准模板", "type":"action"},
+  {"code": "custom:export", "parent":"custom", "name":"导出", "type":"action"},
+  {"code": "custom:download", "parent":"custom", "name":"下载", "type":"action"},
+
+  {"code": "system", "name":"系统管理", "type":"nav"},
+
+  {"code": "role", "parent":"system", "name":"角色管理", "type":"menu"},
+  {"code": "role:query", "parent":"role", "name":"查询", "type":"action"},
+  {"code": "role:add", "parent":"role", "name":"新增", "type":"action"},
+  {"code": "role:edit", "parent":"role", "name":"编辑", "type":"action"},
+  {"code": "role:del", "parent":"role", "name":"删除", "type":"action"},
+  {"code": "role:grant", "parent":"role", "name":"授权", "type":"action"},
+
+  {"code": "user", "parent":"system", "name":"用户管理", "type":"menu"},
+  {"code": "user:query", "parent":"user", "name":"查询", "type":"action"},
+  {"code": "user:add", "parent":"user", "name":"新增用户", "type":"action"},
+  {"code": "user:edit", "parent":"user", "name":"编辑用户", "type":"action"},
+  {"code": "user:del", "parent":"user", "name":"删除用户", "type":"action"},
+  {"code": "orgnization:add", "parent":"user", "name":"新增组织", "type":"action"},
+  {"code": "orgnization:edit", "parent":"user", "name":"编辑组织", "type":"action"},
+  {"code": "orgnization:del", "parent":"user", "name":"删除组织", "type":"action"},
+
+  {"code": "paramlist", "parent":"system", "name":"参数设置", "type":"menu"},
+  {"code": "paramlist:query", "parent":"paramlist", "name":"查询", "type":"action"},
+  {"code": "paramlist:save", "parent":"paramlist", "name":"保存", "type":"action"}
+
+]

@@ -1,0 +1,25 @@
+{
+  "ShowEfCoreCommand": true,
+  "ShowSwagger": true,
+  "TokenHeadKey": "Authorization",
+  "Jwt": {
+    "Issuer": "app",
+    "Audience": "app",
+    "SecurityKey": "bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3",
+    "ExpMinutes": "1200"
+  },
+  "ConnectionStrings": {
+    "TenantDb": "Server=localhost;Port=3306;Database=root;Uid=root;Pwd=123456;AllowLoadLocalInfile=true;"
+  },
+  "Redis": {
+    "Hosts": "127.0.0.1:6379",
+    "Pwd": "",
+    "Database": 3
+  },
+  "LocalOss": {
+    "SaveFolder": "../../files",
+    "FileFolderPrefix": "yyyy-MM",
+    "MaxSizeLimit": 0,
+    "AllowExtensions": [ "doc", "docx", "pdf", "txt", "jpg", "jpeg", "png", "gif", "xls", "xlsx", "zip", "rar" ]
+  }
+}

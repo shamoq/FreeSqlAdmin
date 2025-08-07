@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcc_merch>
+   <item>
+      <name>Triblend T-shirt</name>
+      <price>$24.99</price>
+      <description>Represent the freeCodeCamp community with pride in this jet-black Triblend T-shirt featuring the iconic "bonfire function call" logo.</description>
+   </item>
+   <item>
+      <name>Cotton-Poly Pullover Hoodie</name>
+      <price>$49.99</price>
+      <description>Stay toasty and dress like a developer with this jet-black cotton-poly pullover hoodie.</description>
+   </item>
+   <item>
+      <name>Ceramic Coffee Mug</name>
+      <price>$14.99</price>
+      <description>Toast to the developer community with your very own freeCodeCamp Bonfire Function Call mug.</description>
+   </item>
+</fcc_merch>

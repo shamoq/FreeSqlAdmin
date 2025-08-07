@@ -1,0 +1,253 @@
+﻿{
+  "name": "合同管理",
+  "code": "cloudContract",
+  "order": 1,
+  "children": [
+    {
+      "code": "workbench",
+      "name": "工作台",
+      "children": [
+        {
+          "code": "mycontract",
+          "name": "我起草的",
+          "actions": [
+            {
+              "code": "mycontract:query",
+              "name": "查询"
+            },
+            {
+              "code": "mycontract:add",
+              "name": "起草合同"
+            },
+            {
+              "code": "mycontract:adds",
+              "name": "起草合同"
+            },
+            {
+              "code": "mycontract:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "mycontract:del",
+              "name": "删除"
+            },
+            {
+              "code": "mycontract:create",
+              "name": "生成合同"
+            },
+            {
+              "code": "mycontract:lanch",
+              "name": "提交审批"
+            },
+            {
+              "code": "mycontract:approve",
+              "name": "审批"
+            },
+            {
+              "code": "mycontract:onlinesign",
+              "name": "线下签署"
+            },
+            {
+              "code": "mycontract:download",
+              "name": "下载合同"
+            },
+            {
+              "code": "mycontract:export",
+              "name": "导出"
+            },
+            {
+              "code": "mycontract:import",
+              "name": "导入"
+            }
+          ]
+        },
+        {
+          "code": "approvecontract",
+          "name": "我审批的",
+          "actions": [
+            {
+              "code": "approvecontract:query",
+              "name": "查询"
+            }
+          ]
+        },
+        {
+          "code": "allcontract",
+          "name": "合同台账",
+          "actions": [
+            {
+              "code": "allcontract:query",
+              "name": "查询"
+            },
+            {
+              "code": "allcontract:queryapprove",
+              "name": "查询我审批的"
+            },
+            {
+              "code": "allcontract:querydept",
+              "name": "查询部门下所有合同"
+            },
+            {
+              "code": "allcontract:queryall",
+              "name": "查询所有合同"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "basic",
+      "name": "基础配置",
+      "children": [
+        {
+          "code": "contracttype",
+          "name": "分类管理",
+          "actions": [
+            {
+              "code": "contracttype:query",
+              "name": "查询"
+            },
+            {
+              "code": "contracttype:add",
+              "name": "新增"
+            },
+            {
+              "code": "contracttype:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "contracttype:del",
+              "name": "删除"
+            }
+          ]
+        },
+        {
+          "code": "template",
+          "name": "合同模板",
+          "actions": [
+            {
+              "code": "template:query",
+              "name": "查询"
+            },
+            {
+              "code": "template:add",
+              "name": "新增"
+            },
+            {
+              "code": "template:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "template:del",
+              "name": "删除"
+            },
+            {
+              "code": "template:introduce",
+              "name": "引入范本合同"
+            },
+            {
+              "code": "template:release",
+              "name": "发布"
+            },
+            {
+              "code": "template:cancelrelease",
+              "name": "取消发布"
+            },
+            {
+              "code": "template:download",
+              "name": "下载模板"
+            },
+            {
+              "code": "template:fieldconfig",
+              "name": "字段配置"
+            }
+          ]
+        },
+        {
+          "code": "provider",
+          "name": "合同本方",
+          "actions": [
+            {
+              "code": "provider:query",
+              "name": "查询"
+            },
+            {
+              "code": "provider:add",
+              "name": "新增"
+            },
+            {
+              "code": "provider:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "provider:del",
+              "name": "删除"
+            }
+          ]
+        },
+        {
+          "code": "signparty",
+          "name": "合同相对方",
+          "actions": [
+            {
+              "code": "signparty:query",
+              "name": "查询"
+            },
+            {
+              "code": "signparty:add",
+              "name": "新增"
+            },
+            {
+              "code": "signparty:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "signparty:del",
+              "name": "删除"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "advance",
+      "name": "高级功能",
+      "children": [
+        {
+          "code": "custom",
+          "name": "批量打印",
+          "actions": [
+            {
+              "code": "custom:query",
+              "name": "查询"
+            },
+            {
+              "code": "custom:add",
+              "name": "新增"
+            },
+            {
+              "code": "custom:edit",
+              "name": "编辑"
+            },
+            {
+              "code": "custom:del",
+              "name": "删除"
+            },
+            {
+              "code": "custom:introduce",
+              "name": "引入范本合同"
+            },
+            {
+              "code": "custom:export",
+              "name": "导出"
+            },
+            {
+              "code": "custom:download",
+              "name": "下载"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

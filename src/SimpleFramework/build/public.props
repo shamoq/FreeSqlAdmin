@@ -1,0 +1,13 @@
+<Project>
+  
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2;net472</TargetFrameworks>
+    <Company></Company>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>\</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <NeutralLanguage>zh-CN</NeutralLanguage>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  
+</Project>

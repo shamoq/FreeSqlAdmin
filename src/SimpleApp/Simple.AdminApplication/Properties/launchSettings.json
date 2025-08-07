@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Simple.AdminApplication": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:65469;http://localhost:65470"
+    }
+  }
+}
