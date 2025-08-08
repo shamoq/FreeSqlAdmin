@@ -39,16 +39,16 @@ namespace Simple.AdminApplication.TenantMng.Controllers
         public override async Task<ApiResult> Page(QueryRequestInput pageRequest)
         {
             var (total, data) = await Service.Page(pageRequest);
-            
+
             var dataSourceList = await _tenantDataSourceService.All.ToListAsync();
             var manageDataSource = _configuration.GetManagerDataSource();
             dataSourceList.Add(manageDataSource);
-            
+
             var dataPackageList = await _tenantPackageService.All.ToListAsync();
             foreach (var item in data)
             {
                 var dataSource = dataSourceList.FirstOrDefault(t => t.Id == item.DataSourceId);
-                item.SetAttributeValue("dataSourceName", dataSource?.Remark ?? "");
+                item.SetAttributeValue("dataSourceName", dataSource?.Name ?? "");
 
                 var dataPackage = dataPackageList.FirstOrDefault(t => t.Id == item.TenantPackageId);
                 item.SetAttributeValue("tenantPackageName", dataPackage?.Name);

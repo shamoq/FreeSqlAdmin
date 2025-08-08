@@ -14,7 +14,7 @@ namespace Simple.AdminApplication.UserMng.SeedData
                 return;
             }
 
-            fsql.Delete<SysUser>().Where(t => t.IsAdmin == 1).ExecuteAffrows();
+            // fsql.Delete<SysUser>().Where(t => t.IsAdmin == 1).ExecuteAffrows();
 
             var list = new List<SysUser>();
 

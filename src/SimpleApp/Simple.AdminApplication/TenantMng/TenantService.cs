@@ -84,7 +84,7 @@ namespace Simple.AdminApplication.TenantMng
             {
                 FreeSqlHelper.RegisterTenantDb(fsql, dataSource);
                 fsql.Change(dataSource.Id.ToString());
-                // fsql.CodeFirst.SyncStructure(tenantTypes);
+                fsql.CodeFirst.SyncStructure(tenantTypes);
             }
             catch (Exception e)
             {
@@ -98,6 +98,7 @@ namespace Simple.AdminApplication.TenantMng
         /// <param name="tenant"></param>
         public void ChangeTenant(Tenant tenant)
         {
+            TenantContext.SetCurrentTenant(tenant);
             fsql.Change(tenant.DataSourceId.ToString());
         }
 
